@@ -1,0 +1,524 @@
+/* =========================================================
+   KANJAK PUJA PLATFORM - DIVINE GOLD DESIGN SYSTEM
+   Auspicious, Respectful, Mobile-First Devotional Aesthetic
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Outfit:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Divine Gold & Warm Palette */
+  --gold-primary: #D4AF37;
+  --gold-light: #F7D070;
+  --gold-dark: #A67C1E;
+  --gold-glow: rgba(212, 175, 55, 0.35);
+  --gold-gradient: linear-gradient(135deg, #D4AF37 0%, #F5C518 50%, #B8860B 100%);
+  --gold-border: rgba(212, 175, 55, 0.32);
+
+  /* Auspicious Saffron & Kumkum Tones */
+  --saffron-deep: #D84315;
+  --saffron-bright: #FF6F00;
+  --kumkum: #B71C1C;
+  --saffron-glow: rgba(216, 67, 21, 0.25);
+  --saffron-gradient: linear-gradient(135deg, #FF6F00 0%, #D84315 50%, #B71C1C 100%);
+
+  /* Warm Ivory & Sacred Surfaces */
+  --bg-primary: #120C07;
+  --bg-surface: #1E140C;
+  --bg-surface-elevated: #281B10;
+  --bg-surface-card: rgba(35, 23, 14, 0.85);
+  --ivory-text: #FFFDF8;
+  --ivory-muted: #D9CEBE;
+  --ivory-subtle: #A39684;
+
+  /* Accent status colors */
+  --status-open: #2E7D32;
+  --status-open-bg: rgba(46, 125, 50, 0.2);
+  --status-full: #C62828;
+  --status-full-bg: rgba(198, 40, 40, 0.2);
+  --status-pending: #EF6C00;
+  --status-pending-bg: rgba(239, 108, 0, 0.2);
+
+  /* Radii & Shadows */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+  --shadow-gold: 0 8px 32px -4px rgba(212, 175, 55, 0.18);
+  --shadow-glow: 0 0 25px rgba(245, 197, 24, 0.22);
+  --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.45);
+
+  /* Typography */
+  --font-serif: 'Cinzel', Georgia, serif;
+  --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Light / Warm Mode override option */
+[data-theme="warm-ivory"] {
+  --bg-primary: #FAF6ED;
+  --bg-surface: #FFFFFF;
+  --bg-surface-elevated: #F4ECE0;
+  --bg-surface-card: rgba(255, 255, 255, 0.95);
+  --ivory-text: #20150B;
+  --ivory-muted: #594534;
+  --ivory-subtle: #87715C;
+  --gold-border: rgba(184, 134, 11, 0.35);
+  --shadow-card: 0 10px 30px rgba(78, 52, 20, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-family: var(--font-sans);
+  background-color: var(--bg-primary);
+  color: var(--ivory-text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Divine Background Aura */
+.divine-bg-container {
+  min-height: 100vh;
+  position: relative;
+  background: 
+    radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.15) 0%, transparent 60%),
+    radial-gradient(circle at 10% 30%, rgba(216, 67, 21, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 90% 70%, rgba(212, 175, 55, 0.08) 0%, transparent 50%),
+    var(--bg-primary);
+}
+
+/* Devotional Typography */
+h1, h2, h3, .font-sacred {
+  font-family: var(--font-serif);
+  letter-spacing: 0.5px;
+}
+
+.text-gold-gradient {
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.text-saffron-gradient {
+  background: var(--saffron-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+/* Ornamental Golden Borders */
+.ornament-border {
+  border: 1px solid var(--gold-border);
+  box-shadow: inset 0 0 15px rgba(212, 175, 55, 0.04);
+}
+
+.glass-card {
+  background: var(--bg-surface-card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--gold-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.glass-card:hover {
+  border-color: rgba(212, 175, 55, 0.55);
+  box-shadow: var(--shadow-gold), var(--shadow-glow);
+}
+
+/* Sacred Shlok Banner */
+.sacred-shlok-bar {
+  background: linear-gradient(90deg, rgba(216, 67, 21, 0.15), rgba(212, 175, 55, 0.2), rgba(216, 67, 21, 0.15));
+  border-bottom: 1px solid var(--gold-border);
+  padding: 8px 16px;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--gold-light);
+  letter-spacing: 1px;
+}
+
+/* Animated Diya Light */
+.diya-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.diya-flame {
+  width: 14px;
+  height: 24px;
+  background: radial-gradient(ellipse at bottom, #FFFFFF 0%, #FFD700 40%, #FF6F00 75%, transparent 100%);
+  border-radius: 50% 50% 20% 20% / 60% 60% 40% 40%;
+  animation: flame-flicker 1.8s ease-in-out infinite alternate;
+  filter: drop-shadow(0 0 10px rgba(255, 170, 0, 0.9)) drop-shadow(0 0 20px rgba(212, 175, 55, 0.6));
+  transform-origin: bottom center;
+}
+
+.diya-base {
+  width: 32px;
+  height: 12px;
+  background: linear-gradient(to bottom, #B8860B, #6A4505);
+  border-radius: 0 0 16px 16px;
+  border-top: 2px solid #FFD700;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes flame-flicker {
+  0% {
+    transform: scale(1) rotate(-1deg);
+    opacity: 0.92;
+  }
+  25% {
+    transform: scale(1.08, 0.94) rotate(2deg);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(0.96, 1.05) rotate(-2deg);
+    opacity: 0.88;
+  }
+  75% {
+    transform: scale(1.05, 1) rotate(1deg);
+    opacity: 0.98;
+  }
+  100% {
+    transform: scale(1.02, 0.97) rotate(0deg);
+    opacity: 0.94;
+  }
+}
+
+/* Subtle Glowing Halo */
+.halo-glow {
+  position: relative;
+}
+.halo-glow::before {
+  content: "";
+  position: absolute;
+  inset: -15px;
+  background: radial-gradient(circle, var(--gold-glow) 0%, transparent 70%);
+  border-radius: inherit;
+  z-index: -1;
+  animation: pulse-halo 3s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+@keyframes pulse-halo {
+  0% {
+    opacity: 0.5;
+    transform: scale(0.97);
+  }
+  100% {
+    opacity: 0.95;
+    transform: scale(1.03);
+  }
+}
+
+/* Floating Flower Petals (Respects reduced motion) */
+.petal-particle {
+  position: fixed;
+  top: -20px;
+  pointer-events: none;
+  z-index: 1;
+  animation: petal-fall linear infinite;
+  opacity: 0.75;
+}
+
+@keyframes petal-fall {
+  0% {
+    transform: translateY(0) rotate(0deg) translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.75;
+  }
+  90% {
+    opacity: 0.75;
+  }
+  100% {
+    transform: translateY(105vh) rotate(360deg) translateX(40px);
+    opacity: 0;
+  }
+}
+
+/* Button & Controls */
+.btn-gold {
+  background: var(--gold-gradient);
+  color: #1A1005;
+  font-weight: 600;
+  font-family: var(--font-sans);
+  padding: 12px 24px;
+  border-radius: var(--radius-full);
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 4px 16px rgba(212, 175, 55, 0.3);
+  transition: all 0.2s ease;
+  font-size: 0.95rem;
+}
+
+.btn-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 22px rgba(245, 197, 24, 0.45);
+  filter: brightness(1.06);
+}
+
+.btn-gold:active {
+  transform: translateY(0);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--gold-light);
+  border: 1px solid var(--gold-border);
+  font-weight: 500;
+  padding: 11px 22px;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+  font-size: 0.95rem;
+}
+
+.btn-outline:hover {
+  background: rgba(212, 175, 55, 0.1);
+  border-color: var(--gold-light);
+  color: #FFFFFF;
+}
+
+.btn-danger-outline {
+  background: transparent;
+  color: #FF8A80;
+  border: 1px solid rgba(255, 138, 128, 0.3);
+  padding: 8px 16px;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.2s;
+}
+
+.btn-danger-outline:hover {
+  background: rgba(211, 47, 47, 0.15);
+  border-color: #FF5252;
+}
+
+/* Form Styles */
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--gold-light);
+  margin-bottom: 6px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 12px 14px;
+  background: rgba(20, 13, 8, 0.8);
+  border: 1px solid var(--gold-border);
+  border-radius: var(--radius-sm);
+  color: var(--ivory-text);
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--gold-primary);
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.35);
+  background: rgba(25, 16, 10, 0.95);
+}
+
+.form-control::placeholder {
+  color: var(--ivory-subtle);
+  opacity: 0.7;
+}
+
+.form-helper {
+  font-size: 0.78rem;
+  color: var(--ivory-subtle);
+  margin-top: 4px;
+}
+
+/* Badges & Tags */
+.badge-gold {
+  background: rgba(212, 175, 55, 0.15);
+  border: 1px solid var(--gold-border);
+  color: var(--gold-light);
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.badge-saffron {
+  background: rgba(216, 67, 21, 0.18);
+  border: 1px solid rgba(216, 67, 21, 0.4);
+  color: #FFA726;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.badge-status {
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.badge-status.open {
+  background: var(--status-open-bg);
+  color: #81C784;
+  border: 1px solid rgba(76, 175, 80, 0.3);
+}
+
+.badge-status.full {
+  background: var(--status-full-bg);
+  color: #E57373;
+  border: 1px solid rgba(244, 67, 54, 0.3);
+}
+
+/* Status Indicator Dot */
+.status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: currentColor;
+  box-shadow: 0 0 6px currentColor;
+}
+
+/* Devotional Audio Chime Toggle */
+.audio-toggle-btn {
+  background: rgba(212, 175, 55, 0.12);
+  border: 1px solid var(--gold-border);
+  color: var(--gold-light);
+  padding: 6px 12px;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  transition: all 0.2s;
+}
+
+.audio-toggle-btn:hover {
+  background: rgba(212, 175, 55, 0.25);
+  border-color: var(--gold-primary);
+}
+
+/* Modal Overlay */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 6, 3, 0.82);
+  backdrop-filter: blur(8px);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  animation: fade-in 0.2s ease-out;
+}
+
+.modal-content {
+  background: var(--bg-surface);
+  border: 1px solid var(--gold-border);
+  border-radius: var(--radius-lg);
+  max-width: 580px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 28px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), var(--shadow-glow);
+  position: relative;
+  animation: slide-up 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-up {
+  from { transform: translateY(20px) scale(0.97); opacity: 0; }
+  to { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+/* Toasts / Notifications */
+.toast-notice {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  max-width: 420px;
+  z-index: 150;
+  padding: 16px 20px;
+  border-radius: var(--radius-md);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  animation: slide-up 0.3s ease;
+}
+
+.toast-success {
+  background: #142817;
+  border: 1px solid #4CAF50;
+  color: #E8F5E9;
+}
+
+.toast-error {
+  background: #2C1210;
+  border: 1px solid #E53935;
+  color: #FFEBEE;
+}
+
+.toast-info {
+  background: #241D12;
+  border: 1px solid var(--gold-primary);
+  color: #FFF8E1;
+}
+
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .petal-particle {
+    display: none !important;
+  }
+}
