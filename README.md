@@ -14,7 +14,7 @@ A devotional, privacy-first platform connecting devotee **Host Families** offeri
    - Full accessibility with high-contrast text and `prefers-reduced-motion` compliance.
 
 2. **Kanjak / Guardian Portal (`👧 Kanjak Parivar`)**:
-   - Register child name & age (2–14 years, Kanjak / Langur role).
+   - Register child name & age (2–20 years, Kanjak / Langur role).
    - Guardian contact details, approximate neighborhood, and dietary preferences.
    - **Mandatory Explicit Legal Consent** checkbox.
    - **Zero Child Tracking**: Children are strictly shielded from public directories, search engines, and public APIs.

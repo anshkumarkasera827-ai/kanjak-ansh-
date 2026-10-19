@@ -315,14 +315,14 @@ export default function GuardianPortal({ onRegisteredSuccess, prefilledToken }) 
                 </div>
 
                 <div className="form-group">
-                  <label className="form-label">Child Age (2 - 14 Years) *</label>
+                  <label className="form-label">Child Age (2 - 20 Years) *</label>
                   <select
                     name="childAge"
                     value={formData.childAge}
                     onChange={handleInputChange}
                     className="form-control"
                   >
-                    {[2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14].map((age) => (
+                    {[2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20].map((age) => (
                       <option key={age} value={age}>
                         {age} Years Old
                       </option>

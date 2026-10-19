@@ -42,7 +42,7 @@ export default function PrivacyGuide() {
           </div>
           <p style={{ color: 'var(--ivory-text)', fontSize: '0.92rem', lineHeight: 1.6 }}>
             We only collect the absolute minimum data required to facilitate a sacred Puja: first name / alias, age
-            (2–12 years), guardian phone, general neighborhood, and dietary preferences. We never collect surnames,
+            (2–20 years), guardian phone, general neighborhood, and dietary preferences. We never collect surnames,
             birthdates, school information, photos, or exact home addresses from children.
           </p>
         </div>

@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS guardians (
   id TEXT PRIMARY KEY,
   guardian_token TEXT NOT NULL UNIQUE,
   child_first_name TEXT NOT NULL, -- Only first name or devotional alias
-  child_age INT NOT NULL CHECK (child_age >= 1 AND child_age <= 14),
+  child_age INT NOT NULL CHECK (child_age >= 1 AND child_age <= 20),
   child_type TEXT NOT NULL DEFAULT 'kanjak', -- 'kanjak' or 'langur'
   guardian_name TEXT NOT NULL,
   guardian_relation TEXT NOT NULL,

@@ -12,8 +12,8 @@ export async function POST(request) {
     }
 
     const age = parseInt(body.childAge, 10);
-    if (isNaN(age) || age < 1 || age > 14) {
-      return NextResponse.json({ success: false, error: "Child's age must be between 1 and 14 years" }, { status: 400 });
+    if (isNaN(age) || age < 1 || age > 20) {
+      return NextResponse.json({ success: false, error: "Child's age must be between 1 and 20 years" }, { status: 400 });
     }
 
     if (!body.guardianName || !body.phone || !body.guardianRelation) {
